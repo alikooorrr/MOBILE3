@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".DetailFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <!--Gauche-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/owner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="220dp"
+            android:text="OWNER:" />
+
+        <TextView
+            android:id="@+id/resultatowner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/owner"
+            android:paddingTop="220dp"
+            android:text="True" />
+
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/transmission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/owner"
+            android:text="TRANSMISSION:" />
+
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/resultattransmission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultatowner"
+            android:layout_toRightOf="@+id/transmission"
+            android:text="NULL" />
+
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/marque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transmission"
+            android:text="MARQUE:" />
+
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/resultatmarque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resultattransmission"
+            android:layout_toRightOf="@+id/marque"
+            android:text="NULL" />
+
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/porte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/marque"
+            android:text="NOMBRE DE PORTES:" />
+
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/resultatporte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultatmarque"
+            android:layout_toRightOf="@+id/porte"
+            android:text="NULL" />
+
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/firstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/porte"
+            android:text="FIRSTNAME SELLER:" />
+
+
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/resultatfirstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultatporte"
+            android:layout_toRightOf="@+id/firstname"
+            android:text="alikooorrr" />
+
+
+        <!--DROITE-->
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/resultatprice"
+            android:paddingTop="220dp"
+            android:text="PRICE:" />
+
+        <TextView
+            android:id="@+id/resultatprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingTop="220dp"
+            android:text="5000" />
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price"
+            android:layout_toLeftOf="@id/resultatprice"
+            android:paddingTop="5dp"
+            android:text="YEAR:" />
+
+        <TextView
+            android:id="@+id/resultatyear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resultatprice"
+            android:layout_alignParentRight="true"
+            android:paddingTop="5dp"
+            android:text="2019" />
+
+        <TextView
+            android:id="@+id/resultatmodel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultatyear"
+            android:layout_alignParentRight="true"
+            android:paddingTop="5dp"
+            android:text="NULL" />
+
+        <TextView
+            android:id="@+id/model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/year"
+            android:layout_toLeftOf="@id/resultatmodel"
+            android:paddingTop="5dp"
+            android:text="MODEL:" />
+
+        <TextView
+            android:id="@+id/resultatkilometre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultatmodel"
+            android:layout_alignParentRight="true"
+            android:paddingTop="5dp"
+            android:text="32000" />
+
+        <TextView
+            android:id="@+id/kilometre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/model"
+            android:layout_toLeftOf="@id/resultatmodel"
+            android:paddingTop="5dp"
+            android:text="KILOMETRES" />
+
+        <TextView
+            android:id="@+id/resultatlastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultatkilometre"
+            android:layout_alignParentRight="true"
+            android:paddingTop="5dp"
+            android:text="ZAHA" />
+
+        <TextView
+            android:id="@+id/lastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kilometre"
+            android:layout_toLeftOf="@id/resultatlastname"
+            android:paddingTop="5dp"
+            android:text="LASTNAME:" />
+
+        <TextView
+            android:id="@+id/titredescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lastname"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="5dp"
+            android:text="DESCRIPTION" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titredescription"
+            android:padding="5dp"
+            android:text="Bonjour" />
+    </RelativeLayout>
+
+
+</FrameLayout>

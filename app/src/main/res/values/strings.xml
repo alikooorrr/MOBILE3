@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">TravailPratique3</string>
+    <string name="title_activity_tab_bar">tabBar</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="tab_offres">Offres</string>
+    <string name="tab_vendre">Vendre</string>
+    <string name="tab_mes_annonces">Mes Annonces</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="listeMarques">
+        <item>Acura</item>
+        <item>Aston Martin</item>
+        <item>Audi</item>
+        <item>BMW</item>
+        <item>Buick</item>
+        <item>Cadillac</item>
+        <item>Chevrolet</item>
+        <item>Chrysler</item>
+    </string-array>
+    <string name="title_activity_model_offre">ModelOffre</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="model">Model</string>
+    <string name="alloffres">Liste Offres</string>
+    <string name="title_activity_details_offre">DetailsOffre</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="login">LOGIN</string>
+    <string name="password">password</string>
+    <string name="authentification">AUTHENTIFICATION</string>
+</resources>
