@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,6 +33,7 @@ public class ModelActivity extends AppCompatActivity implements ModelAdapter.Cli
     private ModelAdapter _modelAdapter;
     private RequestQueue _requestQueue;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +50,8 @@ public class ModelActivity extends AppCompatActivity implements ModelAdapter.Cli
 
 
         _requestQueue = Volley.newRequestQueue(this);
-
         JSONResult(namemarq);
-        Log.d("Bonjour",namemarq);
+
 
     }
 
@@ -93,4 +95,10 @@ public class ModelActivity extends AppCompatActivity implements ModelAdapter.Cli
         Intent intent = new Intent(this,ListOffreActivity.class);
         startActivity(intent);
     }
+
+    public interface Result{
+        int recup();
+    }
+
+
 }

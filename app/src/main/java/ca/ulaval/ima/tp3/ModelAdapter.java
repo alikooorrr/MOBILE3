@@ -1,6 +1,7 @@
 package ca.ulaval.ima.tp3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -27,6 +28,7 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelAdapter
         void ItemClickListener(int position);
     }
 
+
     public void setOnItemClickListener(ClickToListOffer listener){
         mListener = listener;
     }
@@ -48,14 +50,12 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelAdapter
         ContentModel currentcontent = listContent.get(i);
         String nameapi = currentcontent.getName();
         modelAdapterViewHolder._textview.setText(nameapi);
-
     }
 
     @Override
     public int getItemCount() {
         return listContent.size();
     }
-
     public class ModelAdapterViewHolder extends RecyclerView.ViewHolder{
         public TextView _textview;
         public ModelAdapterViewHolder(@NonNull View itemView) {
@@ -66,13 +66,15 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelAdapter
                 @Override
                 public void onClick(View v) {
                     if(mListener!=null){
-                        int position = getAdapterPosition();
-                        mListener.ItemClickListener(position);
+                        int item = getAdapterPosition();
+                        i = item;
+                        mListener.ItemClickListener(item);
                     }
                 }
             });
         }
     }
+
 
 }
 

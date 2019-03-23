@@ -391,6 +391,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="SOUMETTRE"
+
                 android:background="@color/colorPrimary"
                 android:textColor="#FFFFFF"
                 android:layout_centerHorizontal="true"/>

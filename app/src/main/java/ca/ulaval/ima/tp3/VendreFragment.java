@@ -1,12 +1,15 @@
 package ca.ulaval.ima.tp3;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -19,6 +22,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -29,6 +33,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
+import com.google.common.collect.Range;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,14 +50,18 @@ import static android.app.Activity.RESULT_OK;
 public class VendreFragment extends Fragment implements View.OnClickListener {
 
     ImageView imageView;
-    Spinner spinner;
+    EditText editPicker,price,kilometre,nbrPorte,firstname,lastname,telephone,description;
+    //owner = False;
+    RadioButton transmission;
+    Spinner spinner,spinnermethode;
     String url= "http://159.203.33.206/api/v1/brand/";
+    ArrayList<String> modelListSpinner;
     ArrayList<String> marque;
     View viewAnnonces;
-    Spinner spinnermethode;
-    EditText editPicker;
-    ArrayList<String> modelListSpinner;
     Button soumettre;
+    AwesomeValidation awesomeValidation;
+
+
     private static int SELECT_IMAGE_INTENT = 1;
     public VendreFragment() {
         // Required empty public constructor
@@ -61,11 +73,26 @@ public class VendreFragment extends Fragment implements View.OnClickListener {
 
         viewAnnonces = inflater.inflate(R.layout.fragment_vendre, container, false);
 
+        imageView = viewAnnonces.findViewById(R.id.imageView);
+        editPicker = viewAnnonces.findViewById(R.id.pickeryear);
+        price = viewAnnonces.findViewById(R.id.editprice);
+        kilometre = viewAnnonces.findViewById(R.id.editkilometre);
+        //A faire
+        //owner = viewAnnonces.findViewById(R.id.toggleButton);
+        //transmission = viewAnnonces.findViewById(R.id.b)
         spinner = viewAnnonces.findViewById(R.id.marque);
+        spinnermethode = viewAnnonces.findViewById(R.id.model);
+        nbrPorte = viewAnnonces.findViewById(R.id.editporte);
+        firstname = viewAnnonces.findViewById(R.id.editfirstname);
+        lastname = viewAnnonces.findViewById(R.id.editlastname);
+        telephone = viewAnnonces.findViewById(R.id.editphone);
+        description = viewAnnonces.findViewById(R.id.editdescription);
         soumettre = viewAnnonces.findViewById(R.id.valid);
 
-        spinnermethode = viewAnnonces.findViewById(R.id.model);
         marque = new ArrayList<>();
+
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
         loadSpinnerData(url);
 
         imageView = viewAnnonces.findViewById(R.id.imageView);
@@ -76,12 +103,15 @@ public class VendreFragment extends Fragment implements View.OnClickListener {
                 startActivityForResult(i,SELECT_IMAGE_INTENT);
             }
         });
-        editPicker = viewAnnonces.findViewById(R.id.pickeryear);
+
         editPicker.setOnClickListener(this);
         soumettre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 soumis(soumettre);
+                if(enregistrer()){
+                    soumis(soumettre);
+                }
             }
         });
 
@@ -90,8 +120,8 @@ public class VendreFragment extends Fragment implements View.OnClickListener {
 
     public void numerPickerDialog(){
         NumberPicker anneePicker = new NumberPicker(getContext());
-        anneePicker.setMinValue(2001);
-        anneePicker.setMaxValue(2019);
+        anneePicker.setMinValue(1000);
+        anneePicker.setMaxValue(3000);
         NumberPicker.OnValueChangeListener newVal = new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
@@ -215,21 +245,62 @@ public class VendreFragment extends Fragment implements View.OnClickListener {
                 final EditText pwd = soumettreview.findViewById(R.id.editpassword);
                 Button btnconfirme = soumettreview.findViewById(R.id.confirme);
 
+                soumettrebuilder.setView(soumettreview);
+                final AlertDialog dialog = soumettrebuilder.create();
+                dialog.show();
+
                 btnconfirme.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        dialog();
                         if(!login.getText().toString().isEmpty() && !pwd.getText().toString().isEmpty()){
                             Toast.makeText(getContext(),"Verification login et mpd doivent etre juste",Toast.LENGTH_LONG).show();
                         }{
                             Toast.makeText(getContext(),"Remplisser les champs vides",Toast.LENGTH_LONG).show();
+
                         }
                     }
                 });
-                soumettrebuilder.setView(soumettreview);
-                AlertDialog dialog = soumettrebuilder.create();
-                dialog.show();
             }
         });
+    }
+
+    public boolean enregistrer(){
+
+        boolean resultat = false;
+        awesomeValidation.addValidation((Activity) getContext(),R.id.editprice,Range.closed(1,900000000),R.string.err_price);
+        awesomeValidation.addValidation((Activity) getContext(),R.id.editkilometre,Range.closed(0,200000000),R.string.err_kilometre);
+        awesomeValidation.addValidation((Activity) getContext(),R.id.pickeryear,Range.closed(0,3000),R.string.err_year);
+        awesomeValidation.addValidation((Activity) getContext(),R.id.firstname,"[a-zA-Z\\s]+",R.string.prenom);
+        awesomeValidation.addValidation((Activity) getContext(),R.id.lastname,"[a-zA-Z\\s]+",R.string.nom);
+        awesomeValidation.addValidation((Activity) getContext(),R.id.editphone, RegexTemplate.TELEPHONE,R.string.tel);
+        awesomeValidation.addValidation((Activity) getContext(),R.id.editporte,Range.closed(2,8),R.string.err_porte);
+
+        if(awesomeValidation.validate()){
+            Toast.makeText(getContext(),"",Toast.LENGTH_LONG).show();
+            resultat =  true;
+        }
+        return resultat;
+    }
+
+    public void dialog(){
+        final ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setMessage("Connected please...");
+        progressDialog.setIndeterminate(true);
+        progressDialog.setProgress(0);
+        progressDialog.show();
+
+        Runnable progressRunnable = new Runnable() {
+
+            @Override
+            public void run() {
+                progressDialog.cancel();
+            }
+        };
+
+        Handler pdCanceller = new Handler();
+        pdCanceller.postDelayed(progressRunnable, 3000);
+
     }
 
 }

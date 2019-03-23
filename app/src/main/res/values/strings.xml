@@ -33,4 +33,11 @@
     <string name="login">LOGIN</string>
     <string name="password">password</string>
     <string name="authentification">AUTHENTIFICATION</string>
+    <string name="tel">telephone number is incorrect</string>
+    <string name="nom">Nom invalid</string>
+    <string name="prenom">Prenom invalid</string>
+    <string name="err_kilometre">kilometre invalid</string>
+    <string name="err_year">year invalid</string>
+    <string name="err_price">price invalid</string>
+    <string name="err_porte">Number wheels  invalid</string>
 </resources>

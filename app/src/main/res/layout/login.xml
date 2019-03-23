@@ -14,12 +14,12 @@
         android:textStyle="bold"/>
     <EditText
         android:id="@+id/editlogin"
-        android:text="Login"
+        android:text="Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/editpassword"
-        android:text="Password"
+        android:text="ID number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
