@@ -94,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ulaval/ima/tp3/ModelActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
@@ -180,11 +180,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ulaval/ima/tp3/ModelAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+            <state relative-caret-position="313">
+              <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1975#2384#0" expanded="true" />
@@ -231,6 +231,11 @@
       </list>
     </option>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="C:\Users\alikooorrr\Downloads\travailPratique3-master\TP3.jks" />
+    <option name="KEY_ALIAS" value="key1" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -259,8 +264,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ca/ulaval/ima/tp3/ListOffreActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/ulaval/ima/tp3/MarqueAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/model.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/ulaval/ima/tp3/ModelAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/ulaval/ima/tp3/ModelActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/ulaval/ima/tp3/ModelAdapter.java" />
       </list>
     </option>
   </component>
@@ -325,10 +330,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ExportApk.ApkPath" value="C:\Users\alikooorrr\Downloads\travailPratique3-master" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="Nexus_5X_API_16" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TP2-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.3.0" />
   </component>
   <component name="RecentsManager">
@@ -424,7 +433,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5034325" side_tool="true" weight="0.32980332" />
       <window_info id="Image Layers" order="1" />
@@ -434,13 +442,13 @@
       <window_info id="Capture Tool" order="5" />
       <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.49656752" visible="true" weight="0.32980332" />
       <window_info id="Captures" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Logcat" order="0" visible="true" weight="0.3276923" />
+      <window_info anchor="bottom" id="Logcat" order="0" weight="0.3276923" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Debug" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="6" weight="0.3276923" />
+      <window_info anchor="bottom" id="Build" order="6" visible="true" weight="0.3276923" />
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.32923076" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -478,6 +486,12 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/TP2" />
+      <path value="$PROJECT_DIR$/travailPratique3" />
+    </ignored-roots>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_model.xml">
@@ -789,24 +803,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ulaval/ima/tp3/ModelAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1975#2384#0" expanded="true" />
-            <element signature="e#2383#2384#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ulaval/ima/tp3/ModelActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ulaval/ima/tp3/ModelAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1975#2384#0" expanded="true" />
+            <element signature="e#2383#2384#0" expanded="true" />
           </folding>
         </state>
       </provider>

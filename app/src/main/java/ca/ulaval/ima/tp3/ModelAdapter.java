@@ -67,7 +67,6 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelAdapter
                 public void onClick(View v) {
                     if(mListener!=null){
                         int item = getAdapterPosition();
-                        i = item;
                         mListener.ItemClickListener(item);
                     }
                 }
