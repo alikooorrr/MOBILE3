@@ -32,9 +32,9 @@ public class EssaieAdapteer extends RecyclerView.Adapter<EssaieAdapteer.EssaieAd
     @Override
     public void onBindViewHolder(@NonNull EssaieAdapteerViewHolder essaieAdapteerViewHolder, int i) {
         Essaie currentessaie = _essaie.get(i);
-        int anneeapi = currentessaie.getYear();
+        String anneeapi = currentessaie.getImage();
         essaieAdapteerViewHolder.annee.setText(anneeapi);
-        int prixapi = currentessaie.getPrice();
+        String prixapi = currentessaie.getCreated();
         essaieAdapteerViewHolder.prix.setText(prixapi);
 
 

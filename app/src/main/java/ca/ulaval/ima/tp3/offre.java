@@ -48,20 +48,30 @@ public class offre extends AppCompatActivity {
         _recyclerView.setHasFixedSize(true);
 
         _essaie = new ArrayList<>();
+        _essaie.add(new Essaie(0,"ooo","dddd"));
         _requestQueue = Volley.newRequestQueue(this);
-        JSONResult();
-
+        JSONResultLIST(idmodel,idmark);
     }
 
-    public void JSONResult(){
+   public void JSONResultLIST(String model,String mark){
         final String url = "http://159.203.33.206/api/v1/offer/";
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Log.d("url",url);
                     JSONArray jsonArray = response.getJSONArray("content");
-                    Log.d("url",String.valueOf(jsonArray.length()));
+                    Log.d("BB",String.valueOf(jsonArray.length()));
+                   for(int i =0;i<jsonArray.length();i++){
+                       Log.d("BB",String.valueOf(jsonArray.get(0)));
+                        JSONObject content = jsonArray.getJSONObject(i);
+                        int yearcontent = content.getInt("year");
+                        String createdcontent = content.getString("created");
+                        String imagecontent = content.getString("image");
+                        _essaie.add(new Essaie(yearcontent,imagecontent,createdcontent));
+                    }
+                    Log.d("II",String.valueOf(_essaie.get(1)));
+                    _essaieAdapteer = new EssaieAdapteer(offre.this,_essaie);
+                    _recyclerView.setAdapter(_essaieAdapteer);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

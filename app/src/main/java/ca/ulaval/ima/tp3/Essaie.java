@@ -40,16 +40,16 @@ public class Essaie {
 
     /**
      *
+     * @param image
+     * @param created
      * @param id
-     * @param price
-     * @param year
 
      */
-    public Essaie(Integer id,Integer year, Integer price) {
+    public Essaie(Integer id,String image, String created) {
         super();
         this.id = id;
-        this.year = year;
-        this.price = price;
+        this.image = image;
+        this.created = created;
     }
 
     public Essaie(Integer id){
