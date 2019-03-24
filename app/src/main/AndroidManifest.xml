@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListOffreActivity"></activity>
+        <activity android:name=".offre"></activity>
+        <activity android:name=".ListOffreActivity" />
         <activity
             android:name=".DetailsOffre"
             android:label="@string/title_activity_details_offre" />

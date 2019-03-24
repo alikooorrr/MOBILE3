@@ -1,5 +1,7 @@
 package ca.ulaval.ima.tp3;
 
+import android.content.Intent;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -57,6 +59,10 @@ public class ContentOffer {
         this.kilometers = kilometers;
         this.price = price;
         this.created = created;
+    }
+
+    public ContentOffer(Integer id){
+        this.id = id;
     }
 
     public Integer getId() {

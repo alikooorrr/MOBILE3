@@ -21,6 +21,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="ca.ulaval.ima.tp3.offre" />
         <activity android:name="ca.ulaval.ima.tp3.ListOffreActivity" />
         <activity
             android:name="ca.ulaval.ima.tp3.DetailsOffre"

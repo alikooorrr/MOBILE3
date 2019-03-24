@@ -1123,6 +1123,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id essaieoffre
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1176,7 +1177,6 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id namemarque
 id namemodel
-id namemodel1
 id navigation
 id navigation_call
 id navigation_header_container
@@ -1370,6 +1370,7 @@ layout activity_details_offre
 layout activity_list_offre
 layout activity_main
 layout activity_model
+layout activity_offre
 layout activity_tab_bar
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1410,6 +1411,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout offreessaie
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

@@ -32,7 +32,7 @@ public class ModelActivity extends AppCompatActivity implements ModelAdapter.Cli
     private ArrayList<ContentModel> _contentModel;
     private ModelAdapter _modelAdapter;
     private RequestQueue _requestQueue;
-
+    String idMarque="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +42,13 @@ public class ModelActivity extends AppCompatActivity implements ModelAdapter.Cli
 
 
         final String namemarq = intent.getStringExtra(EXTRA_NAME);
+        final String idmarq = intent.getStringExtra("id");
+        idMarque=idMarque+idmarq;
 
         _recyclerview = (RecyclerView)findViewById(R.id.recyclerviewmodel);
         _recyclerview.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         _recyclerview.setHasFixedSize(true);
         _contentModel = new ArrayList<>();
-
-
         _requestQueue = Volley.newRequestQueue(this);
         JSONResult(namemarq);
 
@@ -92,12 +92,13 @@ public class ModelActivity extends AppCompatActivity implements ModelAdapter.Cli
 
     @Override
     public void ItemClickListener(int position) {
-        Intent intent = new Intent(this,ListOffreActivity.class);
+        Intent intent = new Intent(this,offre.class);
+        ContentModel clickeditem = _contentModel.get(position);
+        String p = String.valueOf(position);
+        intent.putExtra("nameModel",clickeditem.getName());
+        intent.putExtra("idModel",p);
+        intent.putExtra("idMarque",idMarque);
         startActivity(intent);
-    }
-
-    public interface Result{
-        int recup();
     }
 
 

@@ -9,39 +9,32 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 
-public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHolder> {
+public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferAdapterViewHolder>{
 
     private Context _context;
     private ArrayList<ContentOffer> _contentoffer;
 
-    public OfferAdapter(Context context,ArrayList<ContentOffer> contentOffer){
-        _context = context;
-        _contentoffer = contentOffer;
+    public OfferAdapter(Context _context, ArrayList<ContentOffer> _contentoffer) {
+        this._context = _context;
+        this._contentoffer = _contentoffer;
     }
 
     @NonNull
     @Override
-    public OfferViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(_context).inflate(R.layout.selectedoffre,viewGroup,false);
-        return new OfferViewHolder(v);
+    public OfferAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        LayoutInflater inflater = LayoutInflater.from(_context);
+        View view = inflater.inflate(R.layout.selectedoffre,null);
+        return new OfferAdapterViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull OfferViewHolder offerViewHolder, int i) {
-        ContentOffer currentItem = _contentoffer.get(i);
-        String image = currentItem.getImage();
-        int year = currentItem.getYear();
-        int price = currentItem.getPrice();
-        String brandname = currentItem.getModel().getBrand().getName();
-
-        offerViewHolder.priceoffer.setText(price);
-        offerViewHolder.yearoffrer.setText(year);
-        offerViewHolder.brandnameoffer.setText(brandname);
-        Picasso.with(_context).load(image).fit().centerInside().into(offerViewHolder.imageoffer);
+    public void onBindViewHolder(@NonNull OfferAdapterViewHolder offerAdapterViewHolder, int i) {
+        ContentOffer contentOffer =  _contentoffer.get(i);
+        offerAdapterViewHolder.prix.setText(contentOffer.getPrice());
+        offerAdapterViewHolder.year.setText(contentOffer.getYear());
+        offerAdapterViewHolder.marque.setText(contentOffer.getModel().getBrand().getName());
     }
 
     @Override
@@ -49,19 +42,16 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHol
         return _contentoffer.size();
     }
 
-    //year,price,brandname,image
-    public class OfferViewHolder extends RecyclerView.ViewHolder{
-        public ImageView imageoffer;
-        public TextView priceoffer;
-        public TextView yearoffrer;
-        public TextView brandnameoffer;
-
-        public OfferViewHolder(@NonNull View itemView) {
+    public class OfferAdapterViewHolder extends RecyclerView.ViewHolder{
+        //ImageView imageView;
+        TextView marque,year,prix;
+        public OfferAdapterViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageoffer = itemView.findViewById(R.id.imageoffer);
-            priceoffer = itemView.findViewById(R.id.priceoffer);
-            yearoffrer = itemView.findViewById(R.id.anneeoffer);
-            brandnameoffer = itemView.findViewById(R.id.marquenameoffer);
+            //imageView = itemView.findViewById(R.id.imageoffer);
+            marque = itemView.findViewById(R.id.marquenameoffer);
+            year = itemView.findViewById(R.id.anneeoffer);
+            prix = itemView.findViewById(R.id.priceoffer);
+
         }
     }
 }

@@ -56,8 +56,10 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelAdapter
     public int getItemCount() {
         return listContent.size();
     }
+
     public class ModelAdapterViewHolder extends RecyclerView.ViewHolder{
         public TextView _textview;
+        public int item;
         public ModelAdapterViewHolder(@NonNull View itemView) {
             super(itemView);
             _textview = itemView.findViewById(R.id.namemodel);
@@ -66,14 +68,13 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelAdapter
                 @Override
                 public void onClick(View v) {
                     if(mListener!=null){
-                        int item = getAdapterPosition();
+                        item = getAdapterPosition();
                         mListener.ItemClickListener(item);
                     }
                 }
             });
         }
+
     }
-
-
 }
 

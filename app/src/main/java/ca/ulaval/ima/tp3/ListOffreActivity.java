@@ -38,21 +38,34 @@ public class ListOffreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_offre);
 
+        Intent intent = getIntent();
+
+
+        final String namemodel = intent.getStringExtra("nameModel");
+        final String idmodel = intent.getStringExtra("idModel");
+        final String idmark = intent.getStringExtra("idMarque");
+
+        Log.d("SALUT",namemodel);
+        Log.d("id",idmodel);
+        Log.d("idMarque",idmark);
+
 
         _recyclerview = (RecyclerView)findViewById(R.id.idlisteoffrerecyclerview);
-        _recyclerview.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         _recyclerview.setHasFixedSize(true);
+        _recyclerview.setLayoutManager(new LinearLayoutManager(this));
+
         _contentOffer = new ArrayList<>();
 
 
         _requestQueue = Volley.newRequestQueue(this);
-
+        JSONResultOffer(idmark,idmodel);
     }
 
 
-    public void JSONResultOffer(){
-        //define url
-        String url ="";
+    public void JSONResultOffer(final String idMarque,final String idModel){
+
+        String url ="http://159.203.33.206/api/v1/offer/search/?model="+idModel+"&brand="+idMarque;
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -71,11 +84,13 @@ public class ListOffreActivity extends AppCompatActivity {
                         int idmodelcontent = modelcontent.getInt("id");
                         String namemodelcontent = modelcontent.getString("name");
                         JSONObject brandmodelcontent = modelcontent.getJSONObject("brand");
-                        String idbrandmodelcontent = brandmodelcontent.getString("name");
-                        int namebrandmodelcontent = brandmodelcontent.getInt("id");
+                        //String idbrandmodelcontent = brandmodelcontent.getString("name");
+                        //int namebrandmodelcontent = brandmodelcontent.getInt("id");
+                        _contentOffer.add(new ContentOffer(idcontent));
+                        //(new ContentOffer(idcontent,new ContentModel(idmodelcontent,namemodelcontent),imagecontent,yearcontent,fromOwnercontent,kilometerscontent,pricecontent,createdcontent)
                     }
-                    /*_offerAdapter = new OfferAdapter(ListOffreActivity.this,);//liste manquante
-                    _recyclerview.setAdapter(_offerAdapter);*/
+                    _offerAdapter = new OfferAdapter(ListOffreActivity.this,_contentOffer);
+                    _recyclerview.setAdapter(_offerAdapter);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

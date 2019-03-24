@@ -14,13 +14,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="30dp"/>
-        <TextView
-            android:id="@+id/namemodel1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="30dp"/>
     </LinearLayout>
 
 </android.support.v7.widget.LinearLayoutCompat>

@@ -832,6 +832,10 @@
         "source": "C:\\Users\\alikooorrr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\85069e61741e9018c67d2cba9f00048e\\res\\drawable\\abc_ic_voice_search_api_material.xml"
     },
     {
+        "merged": "C:\\Users\\alikooorrr\\Downloads\\travailPratique3-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_offreessaie.xml.flat",
+        "source": "C:\\Users\\alikooorrr\\Downloads\\travailPratique3-master\\app\\src\\main\\res\\layout\\offreessaie.xml"
+    },
+    {
         "merged": "C:\\Users\\alikooorrr\\Downloads\\travailPratique3-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
         "source": "C:\\Users\\alikooorrr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\85069e61741e9018c67d2cba9f00048e\\res\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
     },
@@ -1390,6 +1394,10 @@
     {
         "merged": "C:\\Users\\alikooorrr\\Downloads\\travailPratique3-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\alikooorrr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\85069e61741e9018c67d2cba9f00048e\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\alikooorrr\\Downloads\\travailPratique3-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_offre.xml.flat",
+        "source": "C:\\Users\\alikooorrr\\Downloads\\travailPratique3-master\\app\\src\\main\\res\\layout\\activity_offre.xml"
     },
     {
         "merged": "C:\\Users\\alikooorrr\\Downloads\\travailPratique3-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_layout_snackbar_include.xml.flat",

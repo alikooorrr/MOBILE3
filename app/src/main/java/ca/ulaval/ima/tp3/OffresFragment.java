@@ -92,8 +92,9 @@ public class OffresFragment extends Fragment implements MarqueAdapter.OnItemClic
     public void onItemClickListener(int position) {
         Intent intent = new Intent(getContext(),ModelActivity.class);
         ContentMarque clickeditem = _contentMarque.get(position);
-
+        String p = String.valueOf(position);
         intent.putExtra(EXTRA_NAME,clickeditem.getName());
+        intent.putExtra("id",p);
         startActivity(intent);
     }
 }
